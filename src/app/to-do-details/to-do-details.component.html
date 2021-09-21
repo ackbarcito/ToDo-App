@@ -1,0 +1,59 @@
+<mat-card>
+  <form
+    #form="ngForm"
+    (ngSubmit)="saveTodo(currentTodo, form)"
+    style="display: flex; flex-direction: column; align-items: flex-start"
+  >
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="currentTodo.title"
+        name="title"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Details</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="currentTodo.details"
+        name="details"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Folder</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="currentTodo.folder"
+        name="folder"
+      />
+    </mat-form-field>
+
+    <mat-label>{{ currentTodo.progress }}% Complete</mat-label>
+    <mat-slider [(ngModel)]="currentTodo.progress" name="progress"></mat-slider>
+
+    <section>
+      <mat-checkbox [(ngModel)]="currentTodo.favourite" name="favourite">
+        Favourite
+      </mat-checkbox>
+    </section>
+
+    <mat-card-actions>
+      <button
+        [disabled]="form.invalid"
+        type="submit"
+        mat-button
+        color="primary"
+      >
+        Save
+      </button>
+      <button type="button" mat-button (click)="resetForm(form)">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
