@@ -27,8 +27,9 @@ export class AppComponent implements OnInit {
   }
 
   deleteToDo(id: number) {
-    let index = this.toDoList.findIndex((item) => (item.id = id));
+    let index = this.toDoList.findIndex((item) => item.id == id);
     this.toDoList.splice(index, 1);
+    this.resetCurrentTodo();
   }
   selectCurrentTodo(item: ToDo) {
     this.currentToDo = item;
