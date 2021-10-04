@@ -1,0 +1,19 @@
+<div class="courses-containers">
+  <div class="courses-list">
+    <app-to-do-list
+      [todoList]="toDoList"
+      (delete)="deleteToDo($event)"
+      (select)="selectCurrentTodo($event)"
+    ></app-to-do-list>
+  </div>
+  <div class="course-details">
+    <app-to-do-details
+      [selecteTodo]="currentToDo"
+      (save)="saveChanges($event)"
+      (reset)="resetCurrentTodo()"
+    ></app-to-do-details>
+  </div>
+  <button class="float" mat-fab color="primary">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

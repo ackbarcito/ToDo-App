@@ -1,11 +1,18 @@
-.courses-containers {
-  display: flex;
-  justify-content: space-around;
+.container {
+  padding: 19px;
 }
-.courses-list {
-  width: 49%;
+.activebutton {
+  color: #080708;
+}
+.example-spacer {
+  flex: 1 1 auto;
 }
 
-.course-details {
-  width: 49%;
+mat-toolbar {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+mat-toolbar > * {
+  margin: 0 16px;
 }

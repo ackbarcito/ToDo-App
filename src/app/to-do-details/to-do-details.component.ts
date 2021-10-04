@@ -25,10 +25,7 @@ export class ToDoDetailsComponent {
     });
   }
 
-  resetForm(form: NgForm) {
+  resetForm() {
     this.reset.emit();
-    setTimeout(() => {
-      form.resetForm();
-    });
   }
 }

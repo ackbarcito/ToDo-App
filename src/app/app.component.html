@@ -1,16 +1,26 @@
-<div class="courses-containers">
-  <div class="courses-list">
-    <app-to-do-list
-      [todoList]="toDoList"
-      (delete)="deleteToDo($event)"
-      (select)="selectCurrentTodo($event)"
-    ></app-to-do-list>
-  </div>
-  <div class="course-details">
-    <app-to-do-details
-      [selecteTodo]="currentToDo"
-      (save)="saveChanges($event)"
-      (reset)="resetCurrentTodo()"
-    ></app-to-do-details>
-  </div>
+<mat-toolbar color="warn">
+  <span>My App</span>
+  <a
+    mat-icon-button
+    routerLink="/home"
+    routerLinkActive="activebutton"
+    class="example-icon home-icon"
+    aria-label="Example icon-button with home icon"
+  >
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </a>
+  <a
+    mat-icon-button
+    routerLink="/favourites"
+    routerLinkActive="activebutton"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>favorite</mat-icon>
+    <span>Favourites</span>
+  </a>
+</mat-toolbar>
+
+<div class="container">
+  <router-outlet></router-outlet>
 </div>

@@ -1,0 +1,35 @@
+mat-list-item {
+  position: relative;
+  z-index: 1;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.progressbar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(72, 184, 90);
+  z-index: -1;
+}
+
+.progressbar > span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.65em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+mat-list-item:hover {
+  background-color: rgb(240, 240, 240);
+}
+mat-icon {
+  transition: all 0.5s;
+  cursor: pointer;
+}
+mat-icon:hover {
+  text-align: center;
+  font-size: 38px;
+}

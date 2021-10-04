@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Favourites List </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let toDo of toDoFavourites">
+        <h3 matLine>{{ toDo.title | titlecase }}</h3>
+        <p matLine>
+          {{ toDo.details }}
+        </p>
+        <p matLine>
+          {{ toDo.folder }}
+        </p>
+        <p matLine>
+          {{ toDo.progress }}
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
