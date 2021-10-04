@@ -1,3 +1,6 @@
+mat-list {
+  width: 100%;
+}
 mat-list-item {
   position: relative;
   z-index: 1;
@@ -31,5 +34,6 @@ mat-icon {
 }
 mat-icon:hover {
   text-align: center;
-  font-size: 38px;
+  width: 30px;
+  font-size: 33px;
 }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ToDoService } from '../share/services/toDo.service';
 import { ToDo } from '../toDo.model';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +13,12 @@ export class HomeComponent {
   title = 'to-doApp';
   currentToDo!: ToDo;
   toDoList: ToDo[];
-  constructor(private todoService: ToDoService) {
+  constructor(private todoService: ToDoService, public dialog: MatDialog) {
     this.toDoList = todoService.getToDos();
   }
 
   deleteToDo(id: number) {
     this.todoService.deleteToDo(id);
-    this.resetCurrentTodo();
   }
   selectCurrentTodo(item: ToDo) {
     this.resetCurrentTodo();
@@ -26,6 +27,13 @@ export class HomeComponent {
   saveChanges(newT: ToDo) {
     this.todoService.saveChanges(newT);
     this.resetCurrentTodo();
+  }
+
+  increaseProgress(id: number) {
+    this.todoService.increaseProgress(id);
+  }
+  decreaseProgress(id: number) {
+    this.todoService.decreaseProgress(id);
   }
 
   resetCurrentTodo() {
@@ -39,5 +47,20 @@ export class HomeComponent {
     };
 
     this.currentToDo = empty;
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      height: '480px',
+      width: '360px',
+      data: {},
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      if (result) {
+        this.saveChanges(result);
+      }
+    });
   }
 }

@@ -10,6 +10,8 @@ export class ToDoListComponent {
   @Input() todoList!: Array<ToDo>;
   @Output() delete = new EventEmitter();
   @Output() select = new EventEmitter();
+  @Output() increase = new EventEmitter();
+  @Output() decrease = new EventEmitter();
 
   deletetodo(id: number) {
     this.delete.emit(id);
@@ -17,5 +19,12 @@ export class ToDoListComponent {
 
   selectCourse(todo: ToDo) {
     this.select.emit(todo);
+  }
+
+  increaseProgressToDo(id: number) {
+    this.increase.emit(id);
+  }
+  decreaseProgressToDo(id: number) {
+    this.decrease.emit(id);
   }
 }

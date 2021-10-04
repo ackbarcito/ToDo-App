@@ -12,6 +12,7 @@ import { MaterialModule } from './material.module';
 import { HomeComponent } from './home/home.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HomeComponent,
     FavouritesComponent,
     PageNotFoundComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

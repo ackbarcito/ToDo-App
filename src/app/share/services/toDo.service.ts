@@ -19,6 +19,20 @@ export class ToDoService {
     TODOS.splice(index, 1);
   }
 
+  increaseProgress(id: number) {
+    let index = TODOS.findIndex((item) => item.id == id);
+    if (TODOS[index].progress + 5 > 100) {
+      TODOS[index].progress = 100;
+    } else TODOS[index].progress += 5;
+  }
+
+  decreaseProgress(id: number) {
+    let index = TODOS.findIndex((item) => item.id == id);
+    if (TODOS[index].progress - 5 < 0) {
+      TODOS[index].progress = 0;
+    } else TODOS[index].progress -= 5;
+  }
+
   saveChanges(newT: ToDo) {
     if (newT.id || newT.id === 0) {
       TODOS.splice(newT.id, 1, newT);
@@ -26,6 +40,9 @@ export class ToDoService {
       if (TODOS.length != 0 || newT.id === null) {
         let lastTodo = TODOS[TODOS.length - 1];
         newT.id = lastTodo.id + 1;
+        if (newT.progress === undefined) {
+          newT.progress = 0;
+        }
         TODOS.push(newT);
       } else {
         newT.id = 0;

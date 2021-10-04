@@ -3,16 +3,25 @@
   justify-content: space-around;
 }
 .courses-list {
-  width: 49%;
-}
-
-.course-details {
-  width: 49%;
+  width: 100%;
 }
 
 .float {
   position: absolute;
+  height: 74px !important;
+  width: 74px !important;
+  min-width: unset !important;
   margin: 0 25px 25px 0;
   right: 0;
   bottom: 0;
+}
+
+.mat-icon {
+  height: 48px !important;
+  width: 48px !important;
+  font-size: 48px !important;
+}
+
+.float:hover {
+  background-color: #586cdd;
 }
