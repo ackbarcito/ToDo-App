@@ -35,7 +35,8 @@ export class ToDoService {
 
   saveChanges(newT: ToDo) {
     if (newT.id || newT.id === 0) {
-      TODOS.splice(newT.id, 1, newT);
+      let editId = TODOS.findIndex((item) => item.id == newT.id);
+      TODOS.splice(editId, 1, newT);
     } else {
       if (TODOS.length != 0 || newT.id === null) {
         let lastTodo = TODOS[TODOS.length - 1];
