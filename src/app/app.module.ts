@@ -12,7 +12,6 @@ import { MaterialModule } from './material.module';
 import { HomeComponent } from './home/home.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ModalComponent } from './modal/modal.component';
 import { ModalCreateComponent } from './modal-create/modal-create.component';
 import { ModalEditComponent } from './modal-edit/modal-edit.component';
 
@@ -24,7 +23,6 @@ import { ModalEditComponent } from './modal-edit/modal-edit.component';
     HomeComponent,
     FavouritesComponent,
     PageNotFoundComponent,
-    ModalComponent,
     ModalCreateComponent,
     ModalEditComponent,
   ],

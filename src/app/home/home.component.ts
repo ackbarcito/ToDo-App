@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ToDoService } from '../share/services/toDo.service';
 import { ToDo } from '../toDo.model';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
 import { ModalCreateComponent } from '../modal-create/modal-create.component';
 
 @Component({
