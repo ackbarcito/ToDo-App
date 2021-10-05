@@ -3,6 +3,7 @@ import { ToDoService } from '../share/services/toDo.service';
 import { ToDo } from '../toDo.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
+import { ModalCreateComponent } from '../modal-create/modal-create.component';
 
 @Component({
   selector: 'app-home',
@@ -50,10 +51,10 @@ export class HomeComponent {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(ModalComponent, {
+    const dialogRef = this.dialog.open(ModalCreateComponent, {
       height: '480px',
       width: '360px',
-      data: {},
+      data: { todo: this.currentToDo },
     });
 
     dialogRef.afterClosed().subscribe((result) => {

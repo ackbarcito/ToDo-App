@@ -6,12 +6,13 @@
       (select)="selectCurrentTodo($event)"
       (increase)="increaseProgress($event)"
       (decrease)="decreaseProgress($event)"
+      (save)="saveChanges($event)"
     ></app-to-do-list>
   </div>
   <!-- <div class="course-details">
     <app-to-do-details
       [selecteTodo]="currentToDo"
-      (save)="saveChanges($event)"
+      
       (reset)="resetCurrentTodo()"
     ></app-to-do-details>
   </div> -->

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { RouterModule } from '@angular/router';
@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ModalComponent } from './modal/modal.component';
+import { ModalCreateComponent } from './modal-create/modal-create.component';
+import { ModalEditComponent } from './modal-edit/modal-edit.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ModalComponent } from './modal/modal.component';
     FavouritesComponent,
     PageNotFoundComponent,
     ModalComponent,
+    ModalCreateComponent,
+    ModalEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,10 +37,12 @@ import { ModalComponent } from './modal/modal.component';
       { path: '**', component: PageNotFoundComponent },
     ]),
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [ModalEditComponent],
 })
 export class AppModule {}

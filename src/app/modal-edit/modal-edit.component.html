@@ -1,0 +1,46 @@
+<div class="container">
+  <h1 mat-dialog-title>Create currentTodo!</h1>
+  <mat-dialog-content [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Title" formControlName="title" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Details</mat-label>
+      <input matInput placeholder="Details" formControlName="details" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Folder</mat-label>
+      <input matInput placeholder="Folder" formControlName="folder" />
+    </mat-form-field>
+
+    <section>
+      <h4 style="margin: 0">
+        {{ !currentTodo.progress ? "0" : currentTodo.progress }}% Complete
+      </h4>
+      <mat-slider
+        matInput
+        placeholder="Progress"
+        formControlName="progress"
+        value="0"
+      ></mat-slider>
+    </section>
+
+    <section>
+      <mat-checkbox placeholder="Favourite" formControlName="favourite">
+        Favourite
+      </mat-checkbox>
+    </section>
+  </mat-dialog-content>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button
+      mat-button
+      [disabled]="!currentTodo.title || !currentTodo.details"
+      (click)="save()"
+    >
+      Ok
+    </button>
+  </div>
+</div>
