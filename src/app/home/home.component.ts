@@ -16,9 +16,10 @@ export class HomeComponent {
   constructor(private todoService: ToDoService, public dialog: MatDialog) {
     this.toDoList = todoService.getToDos();
   }
-
+  
   deleteToDo(id: number) {
     this.todoService.deleteToDo(id);
+    
   }
   selectCurrentTodo(item: ToDo) {
     this.resetCurrentTodo();

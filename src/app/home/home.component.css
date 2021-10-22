@@ -8,18 +8,20 @@
 
 .float {
   position: absolute;
-  height: 74px !important;
-  width: 74px !important;
-  min-width: unset !important;
+  height: 80px !important;
+  width: 80px !important;
   margin: 0 25px 25px 0;
   right: 0;
   bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mat-icon {
-  height: 48px !important;
-  width: 48px !important;
-  font-size: 48px !important;
+  font-size: 55px;
+  width: auto;
+  height: auto;
 }
 
 .float:hover {
