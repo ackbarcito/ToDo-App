@@ -1,7 +1,9 @@
 mat-list {
   width: 100%;
 }
+
 mat-list-item {
+  background-color: rgb(238, 238, 238);
   position: relative;
   z-index: 1;
   margin: 5px 0;
@@ -26,7 +28,7 @@ mat-list-item {
 }
 
 mat-list-item:hover {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(219, 219, 219);
 }
 mat-icon {
   transition: all 0.5s;
@@ -36,4 +38,31 @@ mat-icon:hover {
   text-align: center;
   width: 30px;
   font-size: 33px;
+}
+
+.float {
+  z-index: 200;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 1px;
+  left: 2px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+
+#active {
+  color: rgb(255, 37, 74);
+}
+
+#progress0 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }

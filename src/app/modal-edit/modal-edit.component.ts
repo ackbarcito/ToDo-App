@@ -41,6 +41,7 @@ export class ModalEditComponent implements OnInit {
       progress: [this.progress],
       favourite: [this.favourite],
     });
+    console.log(this.form.value.progress);
   }
 
   onNoClick(): void {
