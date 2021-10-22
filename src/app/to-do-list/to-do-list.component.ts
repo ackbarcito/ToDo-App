@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { ToDo } from '../toDo.model';
 import { ModalEditComponent } from '../modal-edit/modal-edit.component';
 
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-to-do-list',
   templateUrl: './to-do-list.component.html',
@@ -15,6 +17,9 @@ export class ToDoListComponent {
   @Output() increase = new EventEmitter();
   @Output() decrease = new EventEmitter();
   @Output() save = new EventEmitter<ToDo>();
+  @Output() changeFavourite = new EventEmitter();
+
+  faHeart = faHeart;
 
   constructor(public dialog: MatDialog) {}
   deletetodo(id: number) {
@@ -23,6 +28,10 @@ export class ToDoListComponent {
 
   selectCourse(todo: ToDo) {
     this.openDialog(todo);
+  }
+
+  changeFav(id: number) {
+    this.changeFavourite.emit(id);
   }
 
   increaseProgressToDo(id: number) {

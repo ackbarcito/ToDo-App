@@ -2,17 +2,15 @@
   padding: 19px;
 }
 .activebutton {
-  color: #080708;
+  color: #3700ff;
 }
 .example-spacer {
   flex: 1 1 auto;
 }
 
 mat-toolbar {
-  display: inline-flex;
   align-items: center;
-  flex-wrap: wrap;
 }
-mat-toolbar > * {
-  margin: 0 16px;
+#title {
+  font-size: 15px;
 }

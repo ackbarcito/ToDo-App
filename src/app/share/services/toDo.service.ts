@@ -33,6 +33,11 @@ export class ToDoService {
     } else TODOS[index].progress -= 5;
   }
 
+  changeFavourite(id: number) {
+    let index = TODOS.findIndex((item) => item.id == id);
+    TODOS[index].favourite = !TODOS[index].favourite;
+  }
+
   saveChanges(newT: ToDo) {
     if (newT.id || newT.id === 0) {
       let editId = TODOS.findIndex((item) => item.id == newT.id);

@@ -5,6 +5,23 @@
   <mat-card-content>
     <mat-list>
       <mat-list-item *ngFor="let toDo of todoList" (click)="selectCourse(toDo)">
+        <div *ngIf="toDo.favourite; then thenBlock; else elseBlock"></div>
+        <ng-template #thenBlock
+          ><button
+            class="float"
+            id="active"
+            (click)="changeFav(toDo.id); $event.stopImmediatePropagation()"
+          >
+            <fa-icon [icon]="faHeart"></fa-icon></button
+        ></ng-template>
+        <ng-template #elseBlock
+          ><button
+            class="float"
+            (click)="changeFav(toDo.id); $event.stopImmediatePropagation()"
+          >
+            <fa-icon [icon]="faHeart"></fa-icon></button
+        ></ng-template>
+
         <h3 matLine>{{ toDo.title | titlecase }}</h3>
         <p matLine>
           {{ toDo.details }}
@@ -30,9 +47,17 @@
         <button mat-icon-button color="warn" (click)="deletetodo(toDo.id)">
           <mat-icon>delete</mat-icon>
         </button>
-        <div class="progressbar" [style.width.%]="toDo.progress">
-          <span>{{ toDo.progress }}%</span>
-        </div>
+        <div *ngIf="toDo.progress; then barBlock; else barEmptiy"></div>
+        <ng-template #barBlock>
+          <div class="progressbar" [style.width.%]="toDo.progress">
+            <span>{{ toDo.progress }}%</span>
+          </div>
+        </ng-template>
+        <ng-template #barEmptiy>
+          <div class="progressbar" [style.width.%]="0">
+            <span id="progress0">0%</span>
+          </div>
+        </ng-template>
       </mat-list-item>
     </mat-list>
   </mat-card-content>
