@@ -1,0 +1,76 @@
+{
+  "todo": [
+    {
+      "id": 0,
+      "title": "Tp Arquitectura",
+      "details": "Leer a partir de la bolilla 6 del libro 'Arquitectura. Forma, espacio y orden.' Libro de Frank Ching",
+      "folder": "Facultad",
+      "favourite": true,
+      "progress": 80
+    },
+    {
+      "id": 1,
+      "title": "Comprar carne para el asado del domingo",
+      "details": "Comprar en la carneria de la esquina: 1kg de Vacio, 2kg de costilla, 0,5kg de chinculin, 1kg de chorizo criollo y 0,5kg de morcilla.",
+      "folder": "Familia",
+      "favourite": false,
+      "progress": 30
+    },
+    {
+      "id": 2,
+      "title": "Comprar Placa de Video",
+      "details": "Comparar los precios de Placa de video de distintos locales de computacion.",
+      "folder": "Personal",
+      "favourite": true,
+      "progress": 60
+    },
+    {
+      "id": 3,
+      "title": "Arreglar auto",
+      "details": "Buscar respuesto para Correa del auto",
+      "folder": "Auto",
+      "favourite": true,
+      "progress": 90
+    },
+    {
+      "id": 4,
+      "title": "Limpiar PC",
+      "details": "Comprar Aire Comprimido y cepillo.",
+      "folder": "Personal",
+      "favourite": true,
+      "progress": 60
+    },
+    {
+      "id": 5,
+      "title": "Regalo para Antonia",
+      "details": "Buscar en tienda de zapatos algun zapato beige.",
+      "folder": "Personal",
+      "favourite": true,
+      "progress": 40
+    },
+    {
+      "id": 6,
+      "title": "Calibrar ruedas del auto",
+      "details": "Llevar a una gomeria para calibrar la rueda de los autos",
+      "folder": "Auto",
+      "favourite": false,
+      "progress": 10
+    },
+    {
+      "id": 7,
+      "title": "Tp Geologia",
+      "details": "Leer a partir de la bolilla 3 del libro 'Geologia y Minerales' Libro de Pepito",
+      "folder": "Facultad",
+      "favourite": true,
+      "progress": 50
+    },
+    {
+      "id": 8,
+      "title": "Limpiar el garage",
+      "details": "Comprar trapo de pisos nuevos y aromatizante de piso",
+      "folder": "Personal",
+      "favourite": false,
+      "progress": 0
+    }
+  ]
+}

@@ -15,6 +15,8 @@ import { FavouritesComponent } from './favourites/favourites.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ModalCreateComponent } from './modal-create/modal-create.component';
 import { ModalEditComponent } from './modal-edit/modal-edit.component';
+import { CheckFavGuard } from './guards/check-fav.guard';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,11 @@ import { ModalEditComponent } from './modal-edit/modal-edit.component';
     BrowserModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
-      { path: 'favourites', component: FavouritesComponent },
+      {
+        path: 'favourites',
+        component: FavouritesComponent,
+        canActivate: [CheckFavGuard],
+      },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent },
     ]),
@@ -40,6 +46,7 @@ import { ModalEditComponent } from './modal-edit/modal-edit.component';
     BrowserAnimationsModule,
     MaterialModule,
     FontAwesomeModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
