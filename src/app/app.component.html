@@ -1,5 +1,6 @@
+<app-loader></app-loader>
 <mat-toolbar color="warn">
-  <span>My App</span>
+  <span>My ToDos</span>
   <span class="example-spacer"></span>
   <a
     mat-icon-button
@@ -20,6 +21,15 @@
     <mat-icon>favorite</mat-icon>
   </a>
   <span id="title">Favourites</span>
+  <a
+    mat-icon-button
+    routerLink="/folders"
+    routerLinkActive="activebutton"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>folder</mat-icon>
+  </a>
+  <span id="title">Folders</span>
 </mat-toolbar>
 
 <div class="container">

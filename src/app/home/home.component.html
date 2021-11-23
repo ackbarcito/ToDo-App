@@ -1,22 +1,23 @@
 <div class="courses-containers">
-  <div class="courses-list">
-    <app-to-do-list
-      [todoList]="toDoList"
-      (delete)="deleteToDo($event)"
-      (select)="selectCurrentTodo($event)"
-      (increase)="increaseProgress($event)"
-      (decrease)="decreaseProgress($event)"
-      (save)="saveChanges($event)"
-      (changeFavourite)="changeFavourite($event)"
-    ></app-to-do-list>
-  </div>
-  <!-- <div class="course-details">
-    <app-to-do-details
-      [selecteTodo]="currentToDo"
-      
-      (reset)="resetCurrentTodo()"
-    ></app-to-do-details>
-  </div> -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> ToDo List </mat-card-title>
+      <mat-card-subtitle *ngIf="this.currentFolder != null">
+        Folder: {{ this.currentFolder }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <div class="courses-list">
+      <app-to-do-list
+        [todoList]="apiTodos"
+        (delete)="deleteApiTodo($event)"
+        (select)="selectCurrentTodo($event)"
+        (increase)="increaseProgress($event)"
+        (decrease)="decreaseProgress($event)"
+        (save)="updateTodo($event)"
+        (changeFavourite)="changeFavourite($event)"
+      ></app-to-do-list>
+    </div>
+  </mat-card>
   <button class="float" mat-fab color="primary" (click)="openDialog()">
     <mat-icon>add</mat-icon>
   </button>

@@ -1,0 +1,39 @@
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+li {
+  margin-bottom: 30px;
+  width: 33%;
+  padding: 40px;
+  list-style-type: none;
+  border-radius: 5px;
+  border: 2px solid rgb(240, 143, 40);
+  color: rgb(240, 143, 40);
+  text-align: center;
+  cursor: pointer;
+}
+a {
+  font-size: 2.5em;
+}
+
+li:hover {
+  border: 1px solid rgb(238, 153, 63);
+  background-color: rgb(238, 153, 63);
+  color: white;
+}
+
+li:active {
+  border: 1px solid rgb(240, 167, 89);
+  background-color: rgb(240, 167, 89);
+}
+
+@media screen and (max-width: 375px) {
+  a {
+    font-size: 1.8em;
+  }
+}

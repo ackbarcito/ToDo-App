@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
@@ -8,12 +8,17 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ToDoService } from '../share/services/toDo.service';
+import { ToDoApiService } from '../share/services/toDoApi.service';
+import { ToDo } from '../toDo.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CheckFavGuard implements CanActivate {
-  constructor(private todoService: ToDoService, private _rooter: Router) {}
+export class CheckFavGuard implements CanActivate, OnInit {
+  todos!: ToDo[];
+  constructor(private todoService: ToDoApiService, private _rooter: Router) {}
+  ngOnInit(): void {}
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -22,11 +27,15 @@ export class CheckFavGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.todoService.getFavourites().length === 0) {
-      alert('No se encontraron todo favoritos');
-      //this._rooter.navigate(['/']);
-      return false;
-    }
-    return true;
+    return new Observable<boolean>((obs) => {
+      this.todoService.getFavourites().subscribe((data) => {
+        if (data.length === 0) {
+          obs.next(false);
+          alert('No se encontraron todo favoritos');
+        } else {
+          obs.next(true);
+        }
+      });
+    });
   }
 }
