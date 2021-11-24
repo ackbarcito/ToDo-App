@@ -30,15 +30,15 @@ export class ToDoListComponent {
     this.openDialog(todo);
   }
 
-  changeFav(id: number) {
-    this.changeFavourite.emit(id);
+  changeFav(todo: ToDo) {
+    this.changeFavourite.emit(todo);
   }
 
-  increaseProgressToDo(id: number) {
-    this.increase.emit(id);
+  increaseProgressToDo(todo: ToDo) {
+    this.increase.emit(todo);
   }
-  decreaseProgressToDo(id: number) {
-    this.decrease.emit(id);
+  decreaseProgressToDo(todo: ToDo) {
+    this.decrease.emit(todo);
   }
 
   openDialog(todo: ToDo): void {

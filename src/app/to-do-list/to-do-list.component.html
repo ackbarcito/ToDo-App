@@ -1,64 +1,57 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title> ToDo List </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <mat-list>
-      <mat-list-item *ngFor="let toDo of todoList" (click)="selectCourse(toDo)">
-        <div *ngIf="toDo.favourite; then thenBlock; else elseBlock"></div>
-        <ng-template #thenBlock
-          ><button
-            class="float"
-            id="active"
-            (click)="changeFav(toDo.id); $event.stopImmediatePropagation()"
-          >
-            <fa-icon [icon]="faHeart"></fa-icon></button
-        ></ng-template>
-        <ng-template #elseBlock
-          ><button
-            class="float"
-            (click)="changeFav(toDo.id); $event.stopImmediatePropagation()"
-          >
-            <fa-icon [icon]="faHeart"></fa-icon></button
-        ></ng-template>
+<!-- <mat-card> -->
+<mat-card-content>
+  <mat-list>
+    <mat-list-item *ngFor="let toDo of todoList" (click)="selectCourse(toDo)">
+      <div *ngIf="toDo.favourite; then thenBlock; else elseBlock"></div>
+      <ng-template #thenBlock
+        ><button
+          class="float"
+          id="active"
+          (click)="changeFav(toDo); $event.stopImmediatePropagation()"
+        >
+          <fa-icon [icon]="faHeart"></fa-icon></button
+      ></ng-template>
+      <ng-template #elseBlock
+        ><button
+          class="float"
+          (click)="changeFav(toDo); $event.stopImmediatePropagation()"
+        >
+          <fa-icon [icon]="faHeart"></fa-icon></button
+      ></ng-template>
 
-        <h3 matLine>{{ toDo.title | titlecase }}</h3>
-        <p matLine>
-          {{ toDo.details }}
-        </p>
-        <button
-          mat-icon-button
-          color="primary"
-          (click)="
-            decreaseProgressToDo(toDo.id); $event.stopImmediatePropagation()
-          "
-        >
-          <mat-icon>remove</mat-icon>
-        </button>
-        <button
-          mat-icon-button
-          color="primary"
-          (click)="
-            increaseProgressToDo(toDo.id); $event.stopImmediatePropagation()
-          "
-        >
-          <mat-icon>add</mat-icon>
-        </button>
-        <button mat-icon-button color="warn" (click)="deletetodo(toDo.id)">
-          <mat-icon>delete</mat-icon>
-        </button>
-        <div *ngIf="toDo.progress; then barBlock; else barEmptiy"></div>
-        <ng-template #barBlock>
-          <div class="progressbar" [style.width.%]="toDo.progress">
-            <span>{{ toDo.progress }}%</span>
-          </div>
-        </ng-template>
-        <ng-template #barEmptiy>
-          <div class="progressbar" [style.width.%]="0">
-            <span id="progress0">0%</span>
-          </div>
-        </ng-template>
-      </mat-list-item>
-    </mat-list>
-  </mat-card-content>
-</mat-card>
+      <h3 matLine>{{ toDo.title | titlecase }}</h3>
+      <p matLine>
+        {{ toDo.details }}
+      </p>
+      <button
+        mat-icon-button
+        color="primary"
+        (click)="decreaseProgressToDo(toDo); $event.stopImmediatePropagation()"
+      >
+        <mat-icon>remove</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="primary"
+        (click)="increaseProgressToDo(toDo); $event.stopImmediatePropagation()"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deletetodo(toDo.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <div *ngIf="toDo.progress; then barBlock; else barEmptiy"></div>
+      <ng-template #barBlock>
+        <div class="progressbar" [style.width.%]="toDo.progress">
+          <span>{{ toDo.progress }}%</span>
+        </div>
+      </ng-template>
+      <ng-template #barEmptiy>
+        <div class="progressbar" [style.width.%]="0">
+          <span id="progress0">0%</span>
+        </div>
+      </ng-template>
+    </mat-list-item>
+  </mat-list>
+</mat-card-content>
+<!-- </mat-card> -->

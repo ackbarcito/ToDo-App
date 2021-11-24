@@ -1,0 +1,5 @@
+<ul>
+  <li (click)="onSelect(item)" *ngFor="let item of this.folders">
+    <a>{{ item ? item : "none" }}</a>
+  </li>
+</ul>
