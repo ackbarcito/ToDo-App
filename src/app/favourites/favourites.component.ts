@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ToDoService } from '../share/services/toDo.service';
+import { ActivatedRoute } from '@angular/router';
 import { ToDo } from '../toDo.model';
-import { ToDoApiService } from '../share/services/toDoApi.service';
 
 @Component({
   selector: 'app-favourites',
@@ -10,10 +9,8 @@ import { ToDoApiService } from '../share/services/toDoApi.service';
 })
 export class FavouritesComponent implements OnInit {
   toDoFavourites!: ToDo[];
-  constructor(private todoService: ToDoApiService) {
-    this.todoService
-      .getFavourites()
-      .subscribe((favs) => (this.toDoFavourites = favs));
+  constructor(private route: ActivatedRoute) {}
+  ngOnInit(): void {
+    this.toDoFavourites = this.route.snapshot.data.fav;
   }
-  ngOnInit(): void {}
 }

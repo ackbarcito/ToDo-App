@@ -17,9 +17,8 @@ export class ToDoApiService {
 
   getFavourites(): Observable<ToDo[]> {
     const paramsFavourite = new HttpParams().set('favourite', true);
-    return this._http
-      .get<ToDo[]>(url, { params: paramsFavourite })
-      .pipe(delay(3000));
+    return this._http.get<ToDo[]>(url, { params: paramsFavourite });
+    /* .pipe(delay(1000)); */
   }
 
   getFolders() {

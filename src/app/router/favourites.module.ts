@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FavouritesComponent } from 'src/app/favourites/favourites.component';
 import { CheckFavGuard } from 'src/app/guards/check-fav.guard';
+import { TodoResolver } from '../resolvers/todo.resolver';
 
 @NgModule({
   declarations: [],
@@ -12,6 +13,9 @@ import { CheckFavGuard } from 'src/app/guards/check-fav.guard';
       {
         path: '',
         component: FavouritesComponent,
+        resolve: {
+          fav: TodoResolver,
+        },
         canActivate: [CheckFavGuard],
       },
     ]),

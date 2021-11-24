@@ -22,7 +22,7 @@ export class FoldersComponent implements OnInit {
         map((value) => {
           this.folders.indexOf(value.folder) === -1
             ? this.folders.push(value.folder)
-            : console.log(value + ' esta repetido');
+            : '';
         })
       )
       .subscribe();
